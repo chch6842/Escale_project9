@@ -1,0 +1,104 @@
+﻿@{
+  ViewData["Title"] = "Shop";
+}
+<!-- renderBody 輪播活動海報 -->
+<div class="container my-5 ">
+  <div class="row">
+    <div class="col">
+      <div id="carouselPic" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <ul class="carousel-indicators list-unstyled">
+          <li type="button" data-bs-slide-to="0" data-bs-target="#carouselPic" class="active carouselPoint mx-2"
+            style="width:10px; height:10px; border-radius:100%;"></li>
+          <li type="button" data-bs-slide-to="1" data-bs-target="#carouselPic" class="carouselPoint mx-2"
+            style="width:10px; height:10px; border-radius:100%;"></li>
+          <li type="button" data-bs-slide-to="2" data-bs-target="#carouselPic" class="carouselPoint mx-2"
+            style="width:10px; height:10px; border-radius:100%;"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active bannerPic w-100"><img class="img-fluid" src="~/img/P_1_ok.jpg" alt="">
+          </div>
+          <div class="carousel-item bannerPic w-100"><img class="img-fluid" src="~/img/P_2_ok.jpg" alt=""> </div>
+          <div class="carousel-item bannerPic w-100"><img class="img-fluid" src="~/img/P_3_ok.jpg" alt=""> </div>
+        </div>
+        <!-- 輪播活動海報-左右按鍵 -->
+        <!-- <a href="#carouselPic" data-bs-slide="prev" class="carousel-control-prev"><img src="~/img/prev.svg"
+                alt=""></a>
+            <a href="#carouselPic" data-bs-slide="next" class="carousel-control-next"><img src="~/img/next.svg"
+                alt=""></a> -->
+      </div>
+    </div>
+  </div>
+  <div class="container ">
+    <div class="row my-5 fontColor">
+      <div class="col">
+        <h2 class="text-center">❀最新消息❀</h2>
+        <table class="table mt-5 fontColor ">
+
+          <tbody>
+            <tr>
+              <td class="text-nowrap text-end px-3 py-3">2024-04-25</td>
+              <td class="text-break py-3">2024-05 店休日</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap text-end px-3 py-3">2024-03-25</td>
+              <td class="text-break py-3">2024-04 店休日</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap text-end px-3 py-3">2024-01-10</td>
+              <td class="text-break py-3">2024/1/11開放2/15~3/15預購（完售）</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap text-end px-3 py-3">2023-12-05</td>
+              <td class="tdP py-3">十周年草莓大福年節禮盒（完售）</td>
+            </tr>
+            <tr>
+              <td class="text-nowrap text-end px-3 py-3">2023-01-12</td>
+              <td class="tdP py-3">2023/11/13開放草莓大福預購，請先詳讀草莓大福訂購須知</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row fontColor">
+    <div class="col my-5 d-flex justify-content-center align-items-center">
+      <h2>❀訂購指南❀</h2>
+    </div>
+  </div>
+  <div class="row fontColor">
+    <h2 class="fw-bold">付款方式</h2>
+    <div class="col-12 my-1 d-flex justify-content-start align-items-center ">
+      <ul>
+        <li class="my-2">線上刷卡（VISA、MASTER、JCB 皆可使用）</li>
+        <li class="my-2">ATM轉帳（請於 3 日內付款）</li>
+        <li class="my-2">貨到付款</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row fontColor">
+    <h2 class="fw-bold">送貨方式</h2>
+    <div class="col-12 my-1 d-flex justify-content-start align-items-center ">
+      <ul>
+        <li class="my-2">宅配：黑貓（僅限台灣本島）運費180元</li>
+        <li class="my-2">超商：7-11（台灣本島）運費99元</li>
+
+      </ul>
+    </div>
+  </div>
+  <div class="row fontColor">
+    <h2 class="fw-bold ">出貨說明
+    </h2>
+    <div class="col-12 my-1 d-flex justify-content-start align-items-center ">
+      <ol>
+        <li class="my-2">6顆1盒裝，附提袋</li>
+        <li class="my-2">下單後（不含訂購當天），約 2-4 個工作天寄出，不含例假日</li>
+        <li class="my-2">配送時間為週一至週五 10 ~ 6 pm，週六日無安排配送
+          若節慶假日遇訂單較多或不可抗力天災因素，則可能延遲出貨</li>
+        <li class="my-2">如選 [宅配]：實際配送狀況將依照宅配司機安排之路線而定</li>
+        <li class="my-2">如選 [超商]：請留意到貨簡訊並於到貨之後七天內取貨請勿無故未取；如造成運費損失將由顧客自行吸收</li>
+      </ol>
+    </div>
+  </div>
+
+</div>
