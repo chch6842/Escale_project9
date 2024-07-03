@@ -217,8 +217,28 @@ app.UseSwaggerUI(options =>
 
 app.UseAuthorization();
 
+app.MapAreaControllerRoute(
+    name: "AdminArea",
+    areaName: "Admin",
+    pattern: "Admin/{controller=Home}/{action=Init}/{id?}");
+app.MapAreaControllerRoute(
+    name: "MisArea",
+    areaName: "Mis",
+    pattern: "Mis/{controller=Home}/{action=Init}/{id?}");
+app.MapAreaControllerRoute(
+    name: "UserArea",
+    areaName: "User",
+    pattern: "User/{controller=Home}/{action=Init}/{id?}");
+app.MapAreaControllerRoute(
+    name: "MemberArea",
+    areaName: "Member",
+    pattern: "Member/{controller=Home}/{action=Init}/{id?}");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+
+
 app.Run();
+
+

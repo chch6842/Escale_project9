@@ -238,10 +238,10 @@ iframe {
   cursor: pointer;
 }
 
-.button:hover {
+/* .button:hover {
   z-index: 1;
   display: block;
-}
+} */
 
 .button:focus {
   background-color: #0056b3;
