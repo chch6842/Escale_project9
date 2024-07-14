@@ -26,7 +26,7 @@
 <body>
 
     <div class="con mb-l">
-        <nav class="navbar fix-top navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar fix-top navbar-expand-lg navbar-light bg-secondary">
             <!-- <div class="container-fluid"> -->
             <a class="navbar-brand" href="#">
                 <img src="@Url.Content("~/lib/ESCALE/Home/image/handshake (1).png")" alt="Brand" style="height: 30px;">
@@ -41,6 +41,24 @@
                     <li class="nav-item">
                         <a href="@Url.Action("Login" , "User" , new {area = ""})" class="nav-link">會員首頁</a>
                     </li>
+                    <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @* 會員功能 *@
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @if (SessionService.IsLogin)
+                                    {
+                                        <li><a href="@Url.Action("Init", "Order", new { area = "Member", id = "unclosed" })" class="dropdown-item">未結訂單查詢</a></li>
+                                        <li><a href="@Url.Action("Init", "Order", new { area = "Member", id = "closed" })" class="dropdown-item">歷史訂單查詢</a></li>
+                                        <li><a href="@Url.Action("Index", "Profile", new { area = "" })" class="dropdown-item">我的帳號</a></li>
+                                        <li><a href="@Url.Action("Logout", "User", new { area = "" })" class="dropdown-item">登出</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="@Url.Action("Login", "User", new { area = "" })" class="dropdown-item">登入</a></li>
+                                    }
+                                </ul>
+                            </li>
                     <li class="nav-item">
                         <a href="@Url.Action("Record" , "User" , new {area = ""})" class="nav-link">雲端資料庫</a>
                     </li>
