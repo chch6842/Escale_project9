@@ -13,7 +13,7 @@ public partial class Inventorys
 
     public string? SheetNo { get; set; }
 
-    public DateOnly? SheetDate { get; set; }
+    public DateTime? SheetDate { get; set; }
 
     public string? WarehouseNo { get; set; }
 

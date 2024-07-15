@@ -12,8 +12,8 @@ namespace escale.Controllers
       SessionService.SetProgramInfo("", "使用者");
       ActionService.SetActionName("我的帳號");
       using var user = new z_sqlUsers();
-      var model = user
-          .GetDataList()
+      var datas = user.GetDataList();
+      var model = datas
           .Where(m => m.UserNo == SessionService.UserNo)
           .FirstOrDefault();
       return View(model);

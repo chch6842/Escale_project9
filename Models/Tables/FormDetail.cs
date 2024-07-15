@@ -27,11 +27,11 @@ public partial class FormDetail
 
     public string? TitleName { get; set; }
 
-    public DateOnly? StartDate { get; set; }
+    public DateTime? StartDate { get; set; }
 
     public DateTime? StartTime { get; set; }
 
-    public DateOnly? EndDate { get; set; }
+    public DateTime? EndDate { get; set; }
 
     public DateTime? EndTime { get; set; }
 
