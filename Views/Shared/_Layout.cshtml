@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using escale.Models;
+@{
+    List<Categorys> CategoryList = new List<Categorys>();
+    using var categorys = new z_sqlCategorys();
+    CategoryList = categorys.GetTopCategoryList();
+}
+<!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
