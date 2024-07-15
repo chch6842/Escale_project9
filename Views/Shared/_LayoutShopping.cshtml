@@ -18,11 +18,6 @@
 @await RenderSectionAsync("Styles", required: false)
 @await RenderSectionAsync("Scripts", required: false)
 
-  <!-- <style>
-      .breadcrumb {
-        padding: 0 100px; /* 覆蓋內部變數 */
-      }
-    </style> -->
 
 </head>
 
@@ -71,39 +66,11 @@
     <ul class="breadcrumb">
       <li class="breadcrumb-item2"><a href="">購物車</a></li>
       <li class="breadcrumb-item2"><a href="">精選商品</a></li>
-      <!-- <li class="breadcrumb-item2"><a href="">新人展示</a></li>
-      <li class="breadcrumb-item2"><a href="">大偉</a></li>
-      <li class="breadcrumb-item2"><a href="">攝影作品</a></li> -->
     </ul>
   </div>
   <div class="container mb-2">
     @RenderBody()
   </div>
-
-  <!-- 模擬框 -->
-  <!-- <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">模態框標題</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img
-            src="https://d41chssnpqdne.cloudfront.net/artist_bot/29606060/task_task:21cfb400-11b0-48b3-b4e8-bb400f005745/eHbjN.png?Expires=1721213688&Signature=bjjc2bZP2tfb0hcPaJZPgOmM2lgs51TjcEBzcJsosqKkq~YPUtKryVHzfkIRzzsTyMQfVoXnq-Amgr2Gh1sKnAXo9JsqT38Y5kdskjlKKoMCoe1FG9rhyJbeqGTVvfJf3MkABUlNX7A3gcFPKjs2gXvQV6jlZvSEg5iasbXa8Ko7LO4pxSlnwITKGDA98nzQ566t-0UuknFckqFBjSRMD4UjCKPKgBeXbXo7Y46ES6Tc-Ot5azn0ZVqEKJIEPCFFSX7jXnqJIMQSlujWXogPtTvvnBWOhLaT6FgwQsWKrxZIQcB-FssmtH9o70cGmme-3iiJu2~euDgJM4VNyLv1Mw__&Key-Pair-Id=K3USGZIKWMDCSX"
-            alt="blogImg04" class="articleImg">
-          <p>
-            智慧聯網電子秤可以透過稱量食物連結雲端資料庫自動記錄和分析您的飲食狀況和營養攝取情況。
-          </p>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-          <button type="button" class="btn btn-primary">購買</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="footer">
     <div class="social">
       <a href="#">© 2024 MyFitnesspal</a>
@@ -131,11 +98,6 @@
       return true
     }
 
-
-    // function openModal() {
-    //   var myModal = new bootstrap.Modal(document.getElementById('myModal'));
-    //   myModal.show();
-    // }
   </script>
 
 

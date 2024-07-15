@@ -1,6 +1,11 @@
 ﻿@{
     ViewData["Title"] = "myfitnesspal";
 }
+
+@{
+    using var companys = new z_sqlCompanys();
+    var company = companys.GetDefaultCompany();
+}
 <div id="user-info" class="user-info" style="display: none;">
     <div id="user-name" class="member-name"></div> <!-- 登入者名稱 -->
     <button id="logout-btn" class="logout-btn">登出</button>
