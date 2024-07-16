@@ -50,5 +50,12 @@ public IActionResult Index(string id = "All", int page = 1, int pageSize = 10)
     return View(model);
 }
 
+// 排序程式
+[HttpGet]
+public IActionResult Sort(string id = "Product")
+{
+    SessionService.SortNo = id;
+    return RedirectToAction("Index", new { id = SessionService.StringValue1 });
+}
     }
 }
