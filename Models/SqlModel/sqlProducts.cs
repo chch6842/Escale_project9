@@ -185,7 +185,7 @@ LEFT OUTER JOIN Categorys ON Products.CategoryNo = Categorys.CategoryNo
 
         public List<Products> GetSpecialProducts()
         {
-            var model = new List<Products>();
+            var model = new List<Products>();//hackmd.io/@johnsonnote/webdesigncore/https%3A%2F%2Fhackmd.io%2F%40johnsonnote%2Fvscode_other_chartjs
             string sql_query = GetSQLSelect();
             sql_query += " WHERE Products.IsShowPhoto = @IsShowPhoto";
             sql_query += " ORDER BY Products.ProdNo";

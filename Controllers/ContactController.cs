@@ -2,9 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace escale.Controllers
 {
-    public class AboutController : Controller
+    public class ContactController : Controller
     {
-        [HttpGet]
+        public ActionResult Index()
+        {
+            return View();
+        }
+// 寄信確認,加了就不會動
+[HttpGet]
 public IActionResult Contact()
 {
     var model = new vmContact();
@@ -37,5 +42,6 @@ public IActionResult Contact(vmContact model)
 
     return RedirectToAction("Index", "Message", new { area = "" });
 }
+
     }
 }

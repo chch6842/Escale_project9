@@ -1,0 +1,162 @@
+@model IEnumerable<escale.Models.Products>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsEnabled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsInventory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsShowPhoto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandSeriesName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BarcodeNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarketPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InventoryQty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContentText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecificationText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsEnabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsInventory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsShowPhoto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandSeriesName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BarcodeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarketPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SalePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InventoryQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecificationText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
