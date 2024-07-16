@@ -1,34 +1,37 @@
+﻿@using escale.Models;
+@{
+    List<Categorys> CategoryList = new List<Categorys>();
+    using var categorys = new z_sqlCategorys();
+    CategoryList = categorys.GetTopCategoryList();
+}
 <!DOCTYPE html>
 <html lang="zh-Hant">
 
 <head>
-  <title>Shopping</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@AppService.AppName</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <link href="@Url.Content("~/lib/ESCALE/Home/css/shopping.css")" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-<link rel="stylesheet" href="@Url.Content("~/css/site.css")" asp-append-version="true" />
- <link rel="stylesheet" href="@Url.Content("~/lib/ESCALE/Home/css/index.css")">
+    <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    @* <link href="@Url.Content("~/lib/ESCALE/Home/css/s6.css")" rel="stylesheet" /> *@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="@Url.Content("~/lib/ESCALE/Home/css/index.css")">
 
     @* 依需求引入不同樣式表 *@
 
-<script src="@Url.Content("~/js/site.js")" asp-append-version="true"></script>
+    <link rel="stylesheet" href="@Url.Content("~/css/site.css")" asp-append-version="true" />
 
 @await RenderSectionAsync("Styles", required: false)
+<script src="@Url.Content("~/js/site.js")" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
-
 
 </head>
 
 <body>
-  <div class="con mb-l">
+
+    <div class="con mb-l">
         <nav class="navbar fix-top navbar-expand-lg navbar-light bg-secondary">
             <!-- <div class="container-fluid"> -->
             <a class="navbar-brand" href="#">
@@ -88,47 +91,24 @@
             </div>
         </nav>
     </div>
-  <div class="bread">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item2"><a href="">購物車</a></li>
-      <li class="breadcrumb-item2"><a href="">精選商品</a></li>
-    </ul>
-  </div>
-  <div class="container mb-2">
     @RenderBody()
-  </div>
-  <div class="footer">
-    <div class="social">
-      <a href="#">© 2024 MyFitnesspal</a>
-      <a href="#">免責聲明</a>
-      <a href="#">關於我們</a>
+    <div class="footer">
+        <div class="social">
+            @* <a href="@Url.Action("About" , "Home" , new {area = "" })">關於我們</a> *@
+@* 不知道要不要改 要測試效果 *@
+
+        @* <li><a href="@Url.Action("Contact" , "Home" , new {area = "" })">聯絡我們</a></li>  *@
+        </div>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        </div>
+
+      <div class="copy d-flex justify-content-start ms-5">
+        <p>&copy; @DateTime.Today.Year @AppService.Designer</p>
+      </div>
+
     </div>
-    <div class="social-icons">
-      <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-    </div>
-  </div>
-
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <!-- 搜尋框 -->
-  <script>
-    function search() {
-      var q = $("input[name='q']").val();
-      if (q == "") {
-        alert("請輸入關鍵字");
-        return false;
-      }
-
-      return true
-    }
-
-  </script>
-
-
-  <script src="@Url.Content("~/lib/ESCALE/Home/js/shopping.js")" />
-
-  </script>
+    @await RenderSectionAsync("ScriptsBody", required: false)
 </body>
-</html>
