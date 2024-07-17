@@ -37,11 +37,11 @@
           <h3 class="articleTitle">@item.ProdName</h3>
           <div class="articleContent">
             <p>
-              @item.SpecificationText
+              @item.ProdName
             </p>
 
             <!-- </div> -->
-            <div class="articleContentbutton">
+            @* <div class="articleContentbutton">
               <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal" data-item="@item.ProdName"
                 onclick="confirmPurchase('@item.ProdName')">
                 購買
@@ -49,7 +49,7 @@
               <button class="btn btn-secondary" onclick="toggleFavorite(this)">
                 收藏
               </button>
-            </div>
+            </div> *@
           </div>
         </div>
       </div>
