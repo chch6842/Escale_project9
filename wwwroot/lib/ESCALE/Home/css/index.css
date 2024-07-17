@@ -14,7 +14,9 @@ html {
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.3);
 }
-
+.nav-link a{
+color: #110058;
+}
 .con a {
   text-decoration: none;
   color: #fff;
