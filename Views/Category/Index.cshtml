@@ -76,157 +76,30 @@ if (SessionService.SortNo == "High") { str_sort_name = "依價格由高至低"; 
         </div>
         </div>
         <!-- 右中商品列 -->
-        <div class="r-m row right-m d-flex justify-content-center">
+      <div class="r-m row right-m d-flex justify-content-center">
         <div class="r-m1">
-            <div class="r-m2 row d-flex justify-content-center">
-            <div class="product col-lg-3 col-md-3">
+          <div class="r-m2 row d-flex justify-content-center">
+            @foreach (var item in Model)
+            {
+              ProductImageUrl = $"~/images/products/{item.ProdNo}/{item.ProdNo}.jpg";
+              <div class="product col-lg-3 col-md-3">
                 <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="a" src="images/product/01.jpg" alt="" />
-                </a>
+                  <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
+                    <img class="a" src="@Url.Content(ProductImageUrl)" alt="" />
+                  </a>
                 </div>
                 <div class="product-name">
-                <a href="ProductDetails.html">圓領長袖上衣_男</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                  <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
+                    @item.ProdName
+                  </a>
+                  <span>NT$&#032;@item.SalePrice</span>
+                  <a href="@Url.Action("AddCart" , "Cart" , new {area = "" , id = item.ProdNo})">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </a>
                 </div>
-            </div>
-            <div class="product col-lg-3 col-md-3">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="b" src="images/product/02.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">牛仔長袖襯衫_男</a>
-                <span>NT$&#032;300</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="product col-lg-3 col-md-3">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="c" src="images/product/03.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">墨綠花紋洋裝_女</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="d" src="images/product/04.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">寬鬆長袖針織外套_女</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="e" src="images/product/05.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">黑色皮革外套_男</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="f" src="images/product/06.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">藍色圓領長袖_男</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="product_details.html">
-                    <img class="g" src="images/product/07.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">灰色保暖外套_男</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="h" src="images/product/08.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">藍色長版外套_女</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="i" src="images/product/01.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">圓領長袖上衣_男</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="j" src="images/product/02.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">牛仔長袖襯衫_男</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="k" src="images/product/03.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">墨綠花紋洋裝_女</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            <div class="product col-lg-3 col-md-2">
-                <div class="product-img">
-                <a href="ProductDetails.html">
-                    <img class="l" src="images/product/04.jpg" alt="" />
-                </a>
-                </div>
-                <div class="product-name">
-                <a href="ProductDetails.html">寬鬆長袖針織外套_女</a>
-                <span>NT$&#032;490</span>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
-            </div>
-            </div>
+              </div>
+            }
+          </div>
         </div>
         <!-- 右下頁數 -->
         <div class="row r-b">
