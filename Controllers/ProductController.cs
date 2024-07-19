@@ -17,5 +17,8 @@ namespace escale.Controllers
     var model = product.GetData(id);
     return View(model);
 }
-    }
+
+
+
+  }
 }

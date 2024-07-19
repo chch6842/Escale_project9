@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     loop: true, // 啟用循環播放
     autoplay: {
-      delay: 100, // 設置自動播放延遲時間，單位為毫秒
+      delay: 300, // 設置自動播放延遲時間，單位為毫秒
       disableOnInteraction: true, // 使用者交互後是否停止自動播放
     },
     grid: {
