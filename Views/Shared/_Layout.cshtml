@@ -78,7 +78,18 @@
               class="nav-link">Shopping</a>
                     </li>
                     <li class="nav-item"> <a href="@Url.Action("Index" , "Contact" , new {area = "" })"class="nav-link">聯絡我們</a>
-                    </li>
+          </li>
+
+          <li class="nav-item">
+            <div class="cart fr">
+              <a href="@Url.Action("Index" , "Cart" , new {area = ""})">
+                <span class="icofont-cart">
+                  <span ps-3>(@int_count)</span>
+                </span>
+              </a>
+            </div>
+          </li>
+
                     <li class="nav-item">
                         <div class="common__lightbox-box">
                             <div class="search-lightbox">
