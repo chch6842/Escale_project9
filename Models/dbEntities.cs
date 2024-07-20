@@ -1918,8 +1918,24 @@ public partial class dbEntities : DbContext
             entity.Property(e => e.ValidateCode).HasMaxLength(250);
         });
 
-        OnModelCreatingPartial(modelBuilder);
-    }
+    // 自己加入的ScaleData
+
+    modelBuilder.Entity<ScaleData>(entity =>
+    {
+      entity.Property(e => e.Id).ValueGeneratedOnAdd();
+      entity.Property(e => e.Date).HasColumnType("datetime2");
+      entity.Property(e => e.Grains).HasColumnType("int");
+      entity.Property(e => e.Protein).HasColumnType("int");
+      entity.Property(e => e.Dairy).HasColumnType("int");
+      entity.Property(e => e.Vegetables).HasColumnType("int");
+      entity.Property(e => e.Fruits).HasColumnType("int");
+      entity.Property(e => e.OilsNuts).HasColumnType("int");
+    });
+
+
+
+    OnModelCreatingPartial(modelBuilder);
+  }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
