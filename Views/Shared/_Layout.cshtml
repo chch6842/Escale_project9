@@ -3,6 +3,8 @@
     List<Categorys> CategoryList = new List<Categorys>();
     using var categorys = new z_sqlCategorys();
     CategoryList = categorys.GetTopCategoryList();
+  using var carts = new z_sqlCarts();
+  int int_count = carts.GetCartCount();
 }
 <!DOCTYPE html>
 <html lang="zh-Hant">
