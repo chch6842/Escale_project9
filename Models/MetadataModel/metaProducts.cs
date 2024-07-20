@@ -60,4 +60,7 @@ public class z_metaProducts
     public string? SpecificationText { get; set; }
     [Display(Name = "備註")]
     public string? Remark { get; set; }
+
+  // 自己加的定義
+  
 }

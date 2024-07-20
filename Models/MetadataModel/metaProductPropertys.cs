@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace shopping.Models
+namespace escale.Models
 {
     [ModelMetadataType(typeof(z_metaProductPropertys))]
     public partial class ProductPropertys
@@ -29,4 +29,6 @@ public class z_metaProductPropertys
     public string? PropertyValue { get; set; }
     [Display(Name = "備註")]
     public string? Remark { get; set; }
+
+
 }
