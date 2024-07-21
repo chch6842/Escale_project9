@@ -32,7 +32,7 @@ namespace escale.Controllers
     public IActionResult AddCart(string id, int qty = 1)
     {
       using var cart = new z_sqlCarts();
-      cart.AddCart(id, "", 1);
+      cart.AddCart(id, "", qty);
       return RedirectToAction("Index", "Cart", new { area = "" });
     }
 

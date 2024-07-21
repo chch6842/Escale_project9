@@ -125,6 +125,8 @@ public partial class dbEntities : DbContext
 
     public virtual DbSet<Roles> Roles { get; set; }
 
+    public virtual DbSet<ScaleData> ScaleData { get; set; }
+
     public virtual DbSet<Securitys> Securitys { get; set; }
 
     public virtual DbSet<Services> Services { get; set; }
@@ -1055,6 +1057,19 @@ public partial class dbEntities : DbContext
             entity.Property(e => e.RoleNo).HasMaxLength(50);
         });
 
+        modelBuilder.Entity<ScaleData>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__ScaleDat__3214EC0744A88AA5");
+
+            entity.Property(e => e.Dairy).HasColumnType("decimal(7, 2)");
+            entity.Property(e => e.Date).HasColumnType("datetime");
+            entity.Property(e => e.Fruits).HasColumnType("decimal(7, 2)");
+            entity.Property(e => e.Grains).HasColumnType("decimal(7, 2)");
+            entity.Property(e => e.OilsNuts).HasColumnType("decimal(7, 2)");
+            entity.Property(e => e.Protein).HasColumnType("decimal(7, 2)");
+            entity.Property(e => e.Vegetables).HasColumnType("decimal(7, 2)");
+        });
+
         modelBuilder.Entity<Securitys>(entity =>
         {
             entity.HasKey(e => e.Id).IsClustered(false);
@@ -1918,24 +1933,8 @@ public partial class dbEntities : DbContext
             entity.Property(e => e.ValidateCode).HasMaxLength(250);
         });
 
-    // 自己加入的ScaleData
-
-    modelBuilder.Entity<ScaleData>(entity =>
-    {
-      entity.Property(e => e.Id).ValueGeneratedOnAdd();
-      entity.Property(e => e.Date).HasColumnType("datetime2");
-      entity.Property(e => e.Grains).HasColumnType("int");
-      entity.Property(e => e.Protein).HasColumnType("int");
-      entity.Property(e => e.Dairy).HasColumnType("int");
-      entity.Property(e => e.Vegetables).HasColumnType("int");
-      entity.Property(e => e.Fruits).HasColumnType("int");
-      entity.Property(e => e.OilsNuts).HasColumnType("int");
-    });
-
-
-
-    OnModelCreatingPartial(modelBuilder);
-  }
+        OnModelCreatingPartial(modelBuilder);
+    }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
