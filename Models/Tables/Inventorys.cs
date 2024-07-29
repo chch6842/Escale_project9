@@ -17,7 +17,7 @@ public partial class Inventorys
 
   public string? WarehouseNo { get; set; }
 
-    public string? TargetNo { get; set; }
+  public string? TargetNo { get; set; }
 
     public string? TargetName { get; set; }
 

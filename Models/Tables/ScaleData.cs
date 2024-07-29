@@ -7,11 +7,11 @@ public partial class ScaleData
 {
     public int Id { get; set; }
 
-  public DateTime RecordDate { get; set; }
+    public DateTime RecordDate { get; set; }
 
-  public string? UserNo { get; set; }
+    public string? UserNo { get; set; }
 
-  public decimal? Grains { get; set; }
+    public decimal? Grains { get; set; }
 
     public decimal? Protein { get; set; }
 

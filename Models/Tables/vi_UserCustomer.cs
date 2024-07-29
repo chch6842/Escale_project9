@@ -33,7 +33,7 @@ public partial class vi_UserCustomer
 
   public string? ContactEmail { get; set; }
 
-    public string? ContactTel { get; set; }
+  public string? ContactTel { get; set; }
 
     public string? ContactAddress { get; set; }
 

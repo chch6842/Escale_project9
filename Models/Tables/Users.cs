@@ -33,13 +33,15 @@ public partial class Users
 
   public string? ContactEmail { get; set; }
 
-    public string? ContactTel { get; set; }
+  public string? ContactTel { get; set; }
 
     public string? ContactAddress { get; set; }
 
     public string? ValidateCode { get; set; }
 
-    public string? NotifyPassword { get; set; }
+  public string? LineNotifyToken { get; set; }
+
+  public string? NotifyPassword { get; set; }
 
     public string? Remark { get; set; }
 }

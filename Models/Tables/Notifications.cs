@@ -17,11 +17,11 @@ public partial class Notifications
 
     public string? ReceiverNo { get; set; }
 
-  public DateTime SendDate { get; set; }
+    public DateOnly SendDate { get; set; }
 
-  public DateTime SendTime { get; set; }
+    public DateOnly SendTime { get; set; }
 
-  public string? HeaderText { get; set; }
+    public string? HeaderText { get; set; }
 
     public string? MessageText { get; set; }
 

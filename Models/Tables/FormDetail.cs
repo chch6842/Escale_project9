@@ -35,7 +35,7 @@ public partial class FormDetail
 
   public DateTime? EndTime { get; set; }
 
-    public string? CodeNo { get; set; }
+  public string? CodeNo { get; set; }
 
     public string? CodeName { get; set; }
 

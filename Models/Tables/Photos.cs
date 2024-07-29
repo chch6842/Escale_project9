@@ -15,9 +15,9 @@ public partial class Photos
 
     public string? PriceName { get; set; }
 
-  public DateTime SaleDate { get; set; }
+    public DateOnly SaleDate { get; set; }
 
-  public string? DetailText { get; set; }
+    public string? DetailText { get; set; }
 
     public string? Remark { get; set; }
 }

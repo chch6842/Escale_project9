@@ -23,7 +23,7 @@ public partial class AddressBooks
 
   public string? CompName { get; set; }
 
-    public string? CompID { get; set; }
+  public string? CompID { get; set; }
 
     public string? DeptName { get; set; }
 

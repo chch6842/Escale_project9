@@ -1,3 +1,4 @@
+using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Mvc;
 using SQLitePCL;
 
@@ -32,10 +33,21 @@ namespace escale.Controllers
       var sendEmail = new SendMailService();
       string str_message = sendEmail.AnalysisScale(mailObject, model);
 
-      //顯示訊息
+      //取得訊息文字
       if (string.IsNullOrEmpty(str_message)) str_message = "您的營養分析結果已經寄出，請查收!!";
+
+      //寄送line
+      HttpClient httpClient = new HttpClient();
+      httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+      httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", userData.LineNotifyToken);
+      var content = new Dictionary<string, string>();
+      content.Add("message", str_message);
+      httpClient.PostAsync("https://notify-api.line.me/api/notify", new FormUrlEncodedContent(content));
+
+      //顯示訊息
       SessionService.MessageText = str_message;
       return RedirectToAction("Index", "Message", new { area = "" });
     }
   }
 }
+

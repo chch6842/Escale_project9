@@ -25,7 +25,7 @@ Users.CodeNo, vi_CodeUser.CodeName, Users.RoleNo, Roles.RoleName, Users.GenderCo
 vi_CodeGender.CodeName AS GenderName, Users.DeptNo, Departments.DeptName,
 Users.TitleNo, Titles.TitleName, Users.Birthday, Users.OnboardDate, Users.LeaveDate,
 Users.ContactEmail, Users.ContactTel, Users.ContactAddress, Users.ValidateCode,
-Users.NotifyPassword, Users.Remark
+Users.NotifyPassword, Users.Remark ,Users.LineNotifyToken
 FROM Users
 LEFT OUTER JOIN vi_CodeGender ON Users.GenderCode = vi_CodeGender.CodeNo
 LEFT OUTER JOIN vi_CodeUser ON Users.CodeNo = vi_CodeUser.CodeNo

@@ -19,7 +19,7 @@ public partial class FormMaster
 
   public DateTime? FormTime { get; set; }
 
-    public string? TargetNo { get; set; }
+  public string? TargetNo { get; set; }
 
     public string? TargetName { get; set; }
 
@@ -39,7 +39,7 @@ public partial class FormMaster
 
   public DateTime? EndTime { get; set; }
 
-    public string? CodeNo { get; set; }
+  public string? CodeNo { get; set; }
 
     public string? CodeName { get; set; }
 

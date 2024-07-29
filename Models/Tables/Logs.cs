@@ -7,9 +7,9 @@ public partial class Logs
 {
     public int Id { get; set; }
 
-  public DateTime LogDate { get; set; }
+    public DateOnly LogDate { get; set; }
 
-  public DateTime LogTime { get; set; }
+    public DateTime LogTime { get; set; }
 
     public string? CodeNo { get; set; }
 
