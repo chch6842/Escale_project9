@@ -1,5 +1,4 @@
-@model IEnumerable<escale.Models.Products>
-@using escale.Models;
+@model escale.Models.ScaleData
 
 @{
   ViewData["Title"] = "食物份量記錄與建議";
@@ -37,40 +36,44 @@
   </div>
   <div class="bottom-section">
     <div class="input-section">
-      <div class="form">
-        <h2>請輸入食物份量</h2>
-        <div class="food-input">
-          <label>
-            <span>日期:</span>
-            <input type="date" id="inputDate">
-          </label>
-          <label>
-            <span>全穀雜糧類:</span>
-            <input type="number" id="grains" min="0"> 克
-          </label>
-          <label>
-            <span>豆魚蛋肉類:</span>
-            <input type="number" id="protein" min="0"> 克
-          </label>
-          <label>
-            <span>乳品類:</span>
-            <input type="number" id="dairy" min="0"> 克
-          </label>
-          <label>
-            <span>蔬菜類:</span>
-            <input type="number" id="vegetables" min="0"> 克
-          </label>
-          <label>
-            <span>水果類:</span>
-            <input type="number" id="fruits" min="0"> 克
-          </label>
-          <label>
-            <span>油脂與堅果種子類:</span>
-            <input type="number" id="oilsNuts" min="0"> 克
-          </label>
-          <button type="button" onclick="submitData()">提交</button>
+      @using (Html.BeginForm("Index", "Analysis", new { area = "" }, FormMethod.Post))
+      {
+        <div class="form">
+          <h2>請輸入食物份量</h2>
+          <div class="food-input">
+            <label>
+              <span>日期:</span>
+              <input type="date" id="RecordDate" name="RecordDate">
+            </label>
+            <label>
+              <span>全穀雜糧類:</span>
+              <input type="number" id="Grains" name="Grains" min="0"> 克
+            </label>
+            <label>
+              <span>豆魚蛋肉類:</span>
+              <input type="number" id="Protein" name="Protein" min="0"> 克
+            </label>
+            <label>
+              <span>乳品類:</span>
+              <input type="number" id="Dairy" name="Dairy" min="0"> 克
+            </label>
+            <label>
+              <span>蔬菜類:</span>
+              <input type="number" id="Vegetables" name="Vegetables" min="0"> 克
+            </label>
+            <label>
+              <span>水果類:</span>
+              <input type="number" id="Fruits" name="Fruits" min="0"> 克
+            </label>
+            <label>
+              <span>油脂與堅果種子類:</span>
+              <input type="number" id="OilsNuts" name="OilsNuts" min="0"> 克
+            </label>
+            <input type="submit" value="提交" class="btn btn-success"></input>
+            @* <button type="button" onclick="submitData()">提交</button> *@
+          </div>
         </div>
-      </div>
+      }
 
       <div class="calendar-section">
         <h2>請選擇起始和結束日期

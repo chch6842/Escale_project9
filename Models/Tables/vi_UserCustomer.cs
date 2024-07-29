@@ -25,13 +25,13 @@ public partial class vi_UserCustomer
 
     public string? TitleNo { get; set; }
 
-    public DateOnly? Birthday { get; set; }
+  public DateTime? Birthday { get; set; }
 
-    public DateOnly? OnboardDate { get; set; }
+  public DateTime? OnboardDate { get; set; }
 
-    public DateOnly? LeaveDate { get; set; }
+  public DateTime? LeaveDate { get; set; }
 
-    public string? ContactEmail { get; set; }
+  public string? ContactEmail { get; set; }
 
     public string? ContactTel { get; set; }
 

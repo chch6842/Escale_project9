@@ -15,9 +15,9 @@ public partial class FormMaster
 
     public string? FormNo { get; set; }
 
-    public DateOnly? FormDate { get; set; }
+  public DateTime? FormDate { get; set; }
 
-    public DateTime? FormTime { get; set; }
+  public DateTime? FormTime { get; set; }
 
     public string? TargetNo { get; set; }
 
@@ -31,13 +31,13 @@ public partial class FormMaster
 
     public string? TitleName { get; set; }
 
-    public DateOnly? StartDate { get; set; }
+  public DateTime? StartDate { get; set; }
 
-    public DateTime? StartTime { get; set; }
+  public DateTime? StartTime { get; set; }
 
-    public DateOnly? EndDate { get; set; }
+  public DateTime? EndDate { get; set; }
 
-    public DateTime? EndTime { get; set; }
+  public DateTime? EndTime { get; set; }
 
     public string? CodeNo { get; set; }
 

@@ -1061,13 +1061,14 @@ public partial class dbEntities : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__ScaleDat__3214EC0744A88AA5");
 
-            entity.Property(e => e.Dairy).HasColumnType("decimal(7, 2)");
-            entity.Property(e => e.Date).HasColumnType("datetime");
-            entity.Property(e => e.Fruits).HasColumnType("decimal(7, 2)");
-            entity.Property(e => e.Grains).HasColumnType("decimal(7, 2)");
-            entity.Property(e => e.OilsNuts).HasColumnType("decimal(7, 2)");
-            entity.Property(e => e.Protein).HasColumnType("decimal(7, 2)");
-            entity.Property(e => e.Vegetables).HasColumnType("decimal(7, 2)");
+          entity.Property(e => e.Dairy).HasColumnType("decimal(18, 4)");
+          entity.Property(e => e.Fruits).HasColumnType("decimal(18, 4)");
+          entity.Property(e => e.Grains).HasColumnType("decimal(18, 4)");
+          entity.Property(e => e.OilsNuts).HasColumnType("decimal(18, 4)");
+          entity.Property(e => e.Protein).HasColumnType("decimal(18, 4)");
+          entity.Property(e => e.RecordDate).HasColumnType("datetime");
+          entity.Property(e => e.UserNo).HasMaxLength(50);
+          entity.Property(e => e.Vegetables).HasColumnType("decimal(18, 4)");
         });
 
         modelBuilder.Entity<Securitys>(entity =>

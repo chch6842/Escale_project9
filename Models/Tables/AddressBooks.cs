@@ -19,9 +19,9 @@ public partial class AddressBooks
 
     public string? GenderCode { get; set; }
 
-    public DateOnly? Birthday { get; set; }
+  public DateTime? Birthday { get; set; }
 
-    public string? CompName { get; set; }
+  public string? CompName { get; set; }
 
     public string? CompID { get; set; }
 

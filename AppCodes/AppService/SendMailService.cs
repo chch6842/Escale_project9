@@ -186,4 +186,39 @@ public class SendMailService : BaseClass
     gmail.Send();
     return gmail.MessageText;
   }
+
+  /// <summary>
+  /// Analysis Email
+  /// </summary>
+  /// <param name="mailObject">mailObject</param>
+  /// <param name="model">model</param>
+  public string AnalysisScale(MailObject mailObject, ScaleData model)
+  {
+    using var gmail = new GmailService();
+
+    //寄信給使用者
+    string str_reg_date = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
+    gmail.MessageText = "";
+    gmail.ReceiverName = mailObject.ToName;
+    gmail.ReceiverEmail = mailObject.ToEmail;
+    gmail.Subject = string.Format("{0}-{1} 您的營養分析結果", AppService.AppName, mailObject.ToName);
+    gmail.Body = string.Format("敬愛的會員 {0} 您好!! <br /><br />", mailObject.ToName);
+    gmail.Body += string.Format("您於 {0} 在我們網站執行了營養分析的功能，<br /><br />", str_reg_date);
+    gmail.Body += "以下是您的營養分析結果：<br /><br />";
+    gmail.Body += string.Format("熱量：{0} kcal<br />", model.Grains);
+    gmail.Body += string.Format("蛋白質：{0} g<br />", model.Protein);
+    gmail.Body += string.Format("乳製品：{0} g<br />", model.Dairy);
+    gmail.Body += string.Format("蔬菜：{0} g<br />", model.Vegetables);
+    gmail.Body += string.Format("水果：{0} g<br />", model.Fruits);
+    gmail.Body += string.Format("油脂及堅果：{0} g<br /><br />", model.OilsNuts);
+    gmail.Body += "本信件為系統自動寄出,請勿回覆!!<br /><br />";
+    gmail.Body += "-------------------------------------------<br />";
+    gmail.Body += string.Format("{0} {1}<br />", AppService.AppName, AppService.AppVersion);
+    gmail.Body += string.Format("{0}<br />", ActionService.HttpHost);
+    gmail.Body += "-------------------------------------------<br />";
+
+    //寄信
+    gmail.Send();
+    return gmail.MessageText;
+  }
 }
