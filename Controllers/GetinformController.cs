@@ -18,9 +18,10 @@ namespace escale.Controllers
     }
 
     [HttpGet]
-    public IEnumerable<object> Get()
+    public IEnumerable<object> Get([FromQuery] string UserNo)
     {
       var result = from a in _context.ScaleData
+                   where a.UserNo == UserNo
                    select new
                    {
                      a.RecordDate,
@@ -35,6 +36,8 @@ namespace escale.Controllers
 
       return result;
     }
+
+    
 
   }
 }
