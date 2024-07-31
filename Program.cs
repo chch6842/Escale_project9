@@ -86,27 +86,27 @@ builder.Services.AddSingleton<JWTBase, JWTServices>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo
+  options.SwaggerDoc("v1", new OpenApiInfo
+  {
+    Version = "v1",
+    Title = "獲取資料 WebAPI",
+    Description = "一個 ASP.NET Core 管理獲取資料的 Web API",
+    TermsOfService = new Uri("https://localhost:6060/Home/Terms"),
+    Contact = new OpenApiContact
     {
-        Version = "v1",
-        Title = "待辦事項 WebAPI",
-        Description = "一個 ASP.NET Core 管理待辦事項的 Web API",
-        TermsOfService = new Uri("https://localhost:5050/Home/Terms"),
-        Contact = new OpenApiContact
-        {
-            Name = "連絡我們",
-            Url = new Uri("https://localhost:5050/Home/Contact")
-        },
-        License = new OpenApiLicense
-        {
-            Name = "版權宣告",
-            Url = new Uri("https://localhost:5050/Home/License")
-        }
-    });
+      Name = "連絡我們",
+      Url = new Uri("https://localhost:6060/Home/Contact")
+    },
+    License = new OpenApiLicense
+    {
+      Name = "版權宣告",
+      Url = new Uri("https://localhost:6060/Home/License")
+    }
+  });
 
-    // using System.Reflection;
-    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+  // using System.Reflection;
+  var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+  options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 #endregion
 
