@@ -103,12 +103,12 @@ h2::before {
   z-index: 0;
 }
 
-.title-text::before {
+/* .title-text::before {
   content: "";
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: #c1c1c1;
+  background-color: #ffffff;
   border-radius: 50%;
   left: 0;
   top: 50%;
@@ -120,19 +120,20 @@ h2::before {
   position: absolute;
   width: 6px;
   height: 6px;
-  background-color: #c1c1c1;
+  background-color: #ffffff;
   border-radius: 50%;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
 
+
 .title-text {
   color: #3b3b3b;
   padding: 0 16px;
   background: #ffffff;
   z-index: 1;
-}
+} */
 
 .articleInfo {
   padding: 0 4px;
