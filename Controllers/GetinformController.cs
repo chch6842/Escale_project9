@@ -37,7 +37,7 @@ namespace escale.Controllers
       return result;
     }
 
-    
+
 
   }
 }
