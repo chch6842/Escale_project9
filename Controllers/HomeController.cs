@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using escale.Models;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace escale.Controllers
 {
@@ -15,6 +16,9 @@ namespace escale.Controllers
 
     public IActionResult Index()
     {
+      var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+      var model = (Path.Combine(AppContext.BaseDirectory, xmlFilename));
+      ViewBag.Model = model;
       return View();
     }
     [HttpGet]

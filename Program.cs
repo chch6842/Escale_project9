@@ -89,8 +89,8 @@ builder.Services.AddSwaggerGen(options =>
   options.SwaggerDoc("v1", new OpenApiInfo
   {
     Version = "v1",
-    Title = "獲取資料 WebAPI",
-    Description = "一個 ASP.NET Core 管理獲取資料的 Web API",
+    Title = "待辦事項 WebAPI",
+    Description = "一個 ASP.NET Core 管理待辦事項的 Web API",
     TermsOfService = new Uri("https://localhost:6060/Home/Terms"),
     Contact = new OpenApiContact
     {
@@ -206,12 +206,12 @@ app.UseSession();
 #region WebAPI設定
 app.UseSwagger(options =>
 {
-    options.SerializeAsV2 = true;
+  options.SerializeAsV2 = true;
 });
 app.UseSwaggerUI(options =>
 {
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = "swagger";
+  options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+  options.RoutePrefix = "swagger";
 });
 #endregion
 

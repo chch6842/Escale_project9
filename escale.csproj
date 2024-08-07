@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Noarn>CA1050,CA1822,CS1591,CS8600,CS8601,CS8602,CS8603,CS8604,CS8618,IDE0017,IDE0018,IDE0028,IDE0044,IDE0051,IDE0052,IDE0054,IDE0059,IDE0060,IDE0063,IDE0074,IDE0090,IDE1006,RCS1110,RCS1118,CS1591</Noarn>
+    <NoWarn>CA1050,CA1822,CS1591,CS8600,CS8601,CS8602,CS8603,CS8604,CS8618,IDE0017,IDE0018,IDE0028,IDE0044,IDE0051,IDE0052,IDE0054,IDE0059,IDE0060,IDE0063,IDE0074,IDE0090,IDE1006,RCS1110,RCS1118,CS1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -46,7 +46,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="NLog" Version="5.3.2" />
     <PackageReference Include="PagedList.Core.Mvc" Version="3.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.7.0" />
     <PackageReference Include="System.Data.Common" Version="4.3.0" />
     <PackageReference Include="System.Linq.Async" Version="6.0.1" />
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
