@@ -10,6 +10,7 @@ public class SendMailService : BaseClass
     using var gmail = new GmailService();
     using var dpr = new DapperRepository();
 
+
     //變數
     string str_reg_date = DateTime.Now.ToString("yyyy/MM/dd HH:mm");
 
@@ -40,7 +41,10 @@ public class SendMailService : BaseClass
   /// <param name="mailObject">電子郵件物件</param>
   /// <returns></returns>
   public string UserForget(MailObject mailObject)
+
   {
+
+
     using var gmail = new GmailService();
     using var dpr = new DapperRepository();
 
@@ -74,6 +78,8 @@ public class SendMailService : BaseClass
   /// <returns></returns>
   public string UserResetPassword(MailObject mailObject)
   {
+
+
     using var gmail = new GmailService();
     using var dpr = new DapperRepository();
 
@@ -106,6 +112,7 @@ public class SendMailService : BaseClass
   /// <returns></returns>
   public string ContactUs(MailObject mailObject)
   {
+
     using var gmail = new GmailService();
 
     //寄信給管理員
@@ -166,6 +173,7 @@ public class SendMailService : BaseClass
   /// <returns></returns>
   public string Subscription(string email, bool isAddEmail)
   {
+
     using var gmail = new GmailService();
 
     //寄信給管理員
@@ -194,6 +202,12 @@ public class SendMailService : BaseClass
   /// <param name="model">model</param>
   public string AnalysisScale(MailObject mailObject, ScaleData model)
   {
+    if (string.IsNullOrEmpty(mailObject.ToEmail))
+    {
+      return "电子邮件地址为空，未发送邮件。";
+    }
+
+
     using var gmail = new GmailService();
 
     //寄信給使用者

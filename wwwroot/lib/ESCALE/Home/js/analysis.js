@@ -1,19 +1,22 @@
+
+
+
 const recommendedValues = {
-    grains: 300,
-    protein: 200,
-    dairy: 300,
-    vegetables: 400,
-    fruits: 300,
-    oilsNuts: 50
+    Grains: 300,
+    Protein: 200,
+    Dairy: 300,
+    Vegetables: 400,
+    Fruits: 300,
+    OilsNuts: 50
 };
 
 const userValues = {
-    grains: {},
-    protein: {},
-    dairy: {},
-    vegetables: {},
-    fruits: {},
-    oilsNuts: {}
+    Grains: {},
+    Protein: {},
+    Dairy: {},
+    Vegetables: {},
+    Fruits: {},
+    OilsNuts: {}
 };
 
 const ctx = document.getElementById('foodChart').getContext('2d');
@@ -133,19 +136,21 @@ function updateAnalysis(selectedItems, startDate, endDate) {
 }
 
 function submitData() {
-    const inputDate = document.getElementById('inputDate').value;
+    console.log('analysis.js loaded');
+
+    const inputDate = document.getElementById('RecordDate').value;
 
     if (!inputDate) {
         alert('請選擇日期');
         return;
     }
 
-    userValues.grains[inputDate] = parseInt(document.getElementById('grains').value) || 0;
-    userValues.protein[inputDate] = parseInt(document.getElementById('protein').value) || 0;
-    userValues.dairy[inputDate] = parseInt(document.getElementById('dairy').value) || 0;
-    userValues.vegetables[inputDate] = parseInt(document.getElementById('vegetables').value) || 0;
-    userValues.fruits[inputDate] = parseInt(document.getElementById('fruits').value) || 0;
-    userValues.oilsNuts[inputDate] = parseInt(document.getElementById('oilsNuts').value) || 0;
+    userValues.Grains[inputDate] = parseInt(document.getElementById('Grains').value) || 0;
+    userValues.Protein[inputDate] = parseInt(document.getElementById('Protein').value) || 0;
+    userValues.Dairy[inputDate] = parseInt(document.getElementById('Dairy').value) || 0;
+    userValues.Vegetables[inputDate] = parseInt(document.getElementById('Vegetables').value) || 0;
+    userValues.Fruits[inputDate] = parseInt(document.getElementById('Fruits').value) || 0;
+    userValues.OilsNuts[inputDate] = parseInt(document.getElementById('OilsNuts').value) || 0;
 
     alert('資料已儲存');
 }

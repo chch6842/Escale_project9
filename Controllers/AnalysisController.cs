@@ -17,10 +17,20 @@ namespace escale.Controllers
     public ActionResult Index(ScaleData model)
     {
       if (!ModelState.IsValid) return View(model);
+
+
       //取得使用者資料
       model.UserNo = SessionService.UserNo;
       var user = new z_sqlUsers();
       var userData = user.GetData(model.UserNo);
+
+      //检查是否有会员资料
+      if (userData == null)
+      {
+        // 没有会员资料处理，显示错误消息
+        ModelState.AddModelError("", "未找到会员资料。");
+        return View(model);
+      }
 
       //儲存至資料庫
       var scale = new z_sqlScaleData();
@@ -46,8 +56,8 @@ namespace escale.Controllers
 
       //顯示訊息
       SessionService.MessageText = str_message;
-      // return RedirectToAction("Index", "Message", new { area = "" });
-      return View(model);
+      return RedirectToAction("Index", "Message", new { area = "" });
+      // return View(model);
     }
   }
 }
