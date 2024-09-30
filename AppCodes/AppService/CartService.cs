@@ -157,5 +157,8 @@ public static class CartService
     NewLotNo();
     return OrderNo;
   }
+
+
+
   #endregion
 }

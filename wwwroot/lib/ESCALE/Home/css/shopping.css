@@ -91,7 +91,7 @@ h2 {
   font-weight: bold;
 }
 
-h2::before {
+/* h2::before {
   content: "";
   position: absolute;
   width: 372px;
@@ -101,7 +101,7 @@ h2::before {
   left: 50%;
   top: 50%;
   z-index: 0;
-}
+} */
 
 /* .title-text::before {
   content: "";

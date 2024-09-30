@@ -26,11 +26,13 @@ namespace escale.Controllers
     {
       return View();
     }
-    [HttpGet]
-    public IActionResult ServiceTerm()
-    {
-      return View();
-    }
+
+    //測試後備註掉沒有問題
+    // [HttpGet]
+    // public IActionResult ServiceTerm()
+    // {
+    //   return View();
+    // }
 
 public IActionResult Contact()
     {

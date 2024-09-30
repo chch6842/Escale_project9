@@ -24,8 +24,7 @@
     <p>準備好贏得健康的勝利了嗎？立即開始追蹤，別擔心，追蹤做起來其實不難！</p>
     <div class="button-container">
       <a href="@Url.Action("Login" , "User" , new {area = ""})" class="button">
-        會員登入/註冊
-      </a>
+        會員登入 / 註冊 </a>
 
 
     </div>
@@ -33,7 +32,7 @@
   <div class="card">
     <img src="https://github.com/Cooko1209/html/blob/main/img/%E8%A8%BB%E5%86%8A.png?raw=true" alt="了解食品">
     <p>了解食品和健身所能帶來的成效</p>
-    <div class="button-container">*
+    <div class="button-container">
 
       <a href="@Url.Action("Index" , "Analysis" , new {area = ""})" class="button">
         雲端資料記錄
@@ -52,6 +51,14 @@
     </div>
   </div>
 </div>
+
+@section Styles
+{
+  <!-- 依需要引用不同樣式表 -->
+  <link rel="stylesheet" href="@Url.Content("~/lib/ESCALE/Home/css/index.css")" />
+
+}
+
 
 <!-- <div class="sidebar">
 

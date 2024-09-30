@@ -6,7 +6,7 @@ html {
   padding: 0;
   min-height: 100vh;
   /* min-height: 100vh; 是一個 CSS 屬性，用於設置元素的最小高度為視窗高度的 100%。這意味著無論視窗的大小如何，該元素的高度至少會與視窗的高度相同。這在確保背景影片或其他元素能夠覆蓋整個視窗高度時非常有用。 */
-  overflow: hidden; /* 隐藏溢出内容 */
+  /*overflow: hidden; /* 隐藏溢出内容 */
 }
 .con {
   max-width: 100%;
@@ -14,9 +14,7 @@ html {
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.3);
 }
-.nav-link a{
-color: #110058;
-}
+
 .con a {
   text-decoration: none;
   color: #fff;
@@ -220,6 +218,8 @@ iframe {
 
 /* 按钮容器样式 */
 .button-container {
+  width: 300px;
+  text-align: center;
   position: fixed;
   bottom: -80px;
   left: 50%;
@@ -230,7 +230,7 @@ iframe {
 
 /* 按钮样式 */
 .button {
-  width: 200px;
+  width: 300px;
   background-color: #50d3ac;
   color: #fff;
   padding: 10px 20px;

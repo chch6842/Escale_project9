@@ -94,7 +94,10 @@
                   結束日期: <input type="date" id="endDate">
                 </label>
                 <br><br>
-                <button type="button" class="bottom-updateChart" onclick="updateChart()">查詢</button>
+                <button type="submit" class="bottom-updateChart" onclick="updateChart()">查詢</button>
+                <a href="@Url.Action("ColumnDatabase" , "CanvasJS" , new {area = ""})" class="button">
+                  會員數據查詢
+                </a>
               </p>
             </h2>
           </div>

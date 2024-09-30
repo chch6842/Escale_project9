@@ -57,7 +57,7 @@ namespace escale.Controllers
       //顯示訊息
       SessionService.MessageText = str_message;
       return RedirectToAction("Index", "Message", new { area = "" });
-      // return View(model);
+
     }
   }
 }

@@ -60,6 +60,7 @@ namespace escale.Controllers
         return RedirectToAction("Init", "Home", new { area = "Admin" });
       if (data.RoleNo == "Member")
       {
+        CartService.MergeCart();
         return RedirectToAction("Index", "Home", new { area = "" });
       }
 

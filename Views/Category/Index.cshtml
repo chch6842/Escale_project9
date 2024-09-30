@@ -61,7 +61,7 @@
           <span class="title-text">精選商品</span>
         </h2>
 
-        <div class="swiper d-none d-md-block" >
+        <div class="swiper d-none d-md-block">
           <div class="swiper-wrapper">
             @foreach (var item in ProductList)
             {
@@ -83,80 +83,80 @@
       </div>
 
       <div class="row">
-      <span class="pagename">全站商品</span>
-      <div class="filter col-lg-3 col-md-6">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            @str_sort_name
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li>
-              <a class="dropdown-item" href="@Url.Action("Sort", "Category", new { area = "", id = "Product" })">預設排序
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="@Url.Action("Sort", "Category", new { area = "", id = "Low" })">依價格由低至高
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="@Url.Action("Sort", "Category", new { area = "", id = "High" })">依價格由高至低
-              </a>
-            </li>
-          </ul>
+        <span class="pagename">全站商品</span>
+        <div class="filter col-lg-3 col-md-6">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              @str_sort_name
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a class="dropdown-item" href="@Url.Action("Sort", "Category", new { area = "", id = "Product" })">預設排序
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="@Url.Action("Sort", "Category", new { area = "", id = "Low" })">依價格由低至高
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="@Url.Action("Sort", "Category", new { area = "", id = "High" })">依價格由高至低
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
         @* </div>*@
 
         <!-- 右中商品列 -->
         <div class="r-m row right-m d-flex justify-content-center"></div>
-      <div class="r-m1">
-        <div class="r-m2 row d-flex justify-content-center">
-          @foreach (var item in Model)
-          {
-            @* ProductImageUrl = $"~/images/products/{item.ProdNo}/{item.ProdNo}.jpg"; *@
+        <div class="r-m1">
+          <div class="r-m2 row d-flex justify-content-center">
+            @foreach (var item in Model)
+            {
+              @* ProductImageUrl = $"~/images/products/{item.ProdNo}/{item.ProdNo}.jpg"; *@
 
-          ProductImageUrl = Url.Content(item.Remark);
-            <div class="product col-lg-3 col-md-3">
-              <div class="product-img">
-                <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
-                  <img class="a" src="@Url.Content(ProductImageUrl)" alt="" />
-                </a>
+              ProductImageUrl = Url.Content(item.Remark);
+              <div class="product col-lg-3 col-md-3">
+                <div class="product-img">
+                  <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
+                    <img class="a" src="@Url.Content(ProductImageUrl)" alt="" />
+                  </a>
+                </div>
+                <div class="product-name">
+                  <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
+                    @item.ProdName
+                  </a>
+                  <span>NT$&#032;@item.SalePrice</span>
+                  <a href="@Url.Action("AddCart" , "Cart" , new {area = "" , id = item.ProdNo})">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </a>
+                </div>
               </div>
-              <div class="product-name">
-                <a href="@Url.Action("Detail" , "Product" , new {area = "" , id = item.ProdNo})">
-                  @item.ProdName
-                </a>
-                <span>NT$&#032;@item.SalePrice</span>
-                <a href="@Url.Action("AddCart" , "Cart" , new {area = "" , id = item.ProdNo})">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </a>
-              </div>
-            </div>
-          }
+            }
+          </div>
         </div>
       </div>
-        </div>
 
-        <!-- 右下頁數 -->
-        <div class="row r-b">
-      <div class="col d-flex justify-content-center">
-        <ul class="pagelink pagination pagination-sm">
-          <li class="page-item">
-            <a href="#" class="page-link">第一頁</a>
-          </li>
-          <li class="page-item">
-            <a href="#" class="page-link">上一頁</a>
-          </li>
-          <li class="page-item">
-            <a href="#" class="page-link">下一頁</a>
-          </li>
-          <li class="page-item">
-            <a href="#" class="page-link">最後一頁</a>
-          </li>
-        </ul>
-      </div>
+      <!-- 右下頁數 -->
+      <div class="row r-b">
+        <div class="col d-flex justify-content-center">
+          <ul class="pagelink pagination pagination-sm">
+            <li class="page-item">
+              <a href="#" class="page-link">第一頁</a>
+            </li>
+            <li class="page-item">
+              <a href="#" class="page-link">上一頁</a>
+            </li>
+            <li class="page-item">
+              <a href="#" class="page-link">下一頁</a>
+            </li>
+            <li class="page-item">
+              <a href="#" class="page-link">最後一頁</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
 
   </div>

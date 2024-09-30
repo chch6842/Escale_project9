@@ -23,9 +23,9 @@ public partial class dbEntities : DbContext
 
   public virtual DbSet<Applications> Applications { get; set; }
 
-  public virtual DbSet<Calendars> Calendars { get; set; }
+  // public virtual DbSet<Calendars> Calendars { get; set; }
 
-  public virtual DbSet<Carousels> Carousels { get; set; }
+  // public virtual DbSet<Carousels> Carousels { get; set; }
 
   public virtual DbSet<Carts> Carts { get; set; }
 
@@ -305,43 +305,43 @@ public partial class dbEntities : DbContext
       entity.Property(e => e.WebSiteUrl).HasMaxLength(250);
     });
 
-    modelBuilder.Entity<Calendars>(entity =>
-    {
-      entity.HasKey(e => e.Id).IsClustered(false);
+    // modelBuilder.Entity<Calendars>(entity =>
+    // {
+    //   entity.HasKey(e => e.Id).IsClustered(false);
 
-      entity.HasIndex(e => new { e.TargetCode, e.TargetNo, e.StartDate }, "IX_Calendars_code_target_date").IsClustered();
+    //   entity.HasIndex(e => new { e.TargetCode, e.TargetNo, e.StartDate }, "IX_Calendars_code_target_date").IsClustered();
 
-      entity.Property(e => e.CodeNo).HasMaxLength(50);
-      entity.Property(e => e.ColorName).HasMaxLength(50);
-      entity.Property(e => e.ContactName).HasMaxLength(50);
-      entity.Property(e => e.ContactTel).HasMaxLength(50);
-      entity.Property(e => e.Description).HasMaxLength(500);
-      entity.Property(e => e.EndDate).HasColumnType("datetime");
-      entity.Property(e => e.EndTime).HasMaxLength(50);
-      entity.Property(e => e.PlaceAddress).HasMaxLength(250);
-      entity.Property(e => e.PlaceName).HasMaxLength(250);
-      entity.Property(e => e.Remark).HasMaxLength(250);
-      entity.Property(e => e.ResourceText).HasMaxLength(500);
-      entity.Property(e => e.RoomNo).HasMaxLength(50);
-      entity.Property(e => e.StartDate).HasColumnType("datetime");
-      entity.Property(e => e.StartTime).HasMaxLength(50);
-      entity.Property(e => e.SubjectName).HasMaxLength(50);
-      entity.Property(e => e.TargetCode).HasMaxLength(50);
-      entity.Property(e => e.TargetNo).HasMaxLength(50);
-    });
+    //   entity.Property(e => e.CodeNo).HasMaxLength(50);
+    //   entity.Property(e => e.ColorName).HasMaxLength(50);
+    //   entity.Property(e => e.ContactName).HasMaxLength(50);
+    //   entity.Property(e => e.ContactTel).HasMaxLength(50);
+    //   entity.Property(e => e.Description).HasMaxLength(500);
+    //   entity.Property(e => e.EndDate).HasColumnType("datetime");
+    //   entity.Property(e => e.EndTime).HasMaxLength(50);
+    //   entity.Property(e => e.PlaceAddress).HasMaxLength(250);
+    //   entity.Property(e => e.PlaceName).HasMaxLength(250);
+    //   entity.Property(e => e.Remark).HasMaxLength(250);
+    //   entity.Property(e => e.ResourceText).HasMaxLength(500);
+    //   entity.Property(e => e.RoomNo).HasMaxLength(50);
+    //   entity.Property(e => e.StartDate).HasColumnType("datetime");
+    //   entity.Property(e => e.StartTime).HasMaxLength(50);
+    //   entity.Property(e => e.SubjectName).HasMaxLength(50);
+    //   entity.Property(e => e.TargetCode).HasMaxLength(50);
+    //   entity.Property(e => e.TargetNo).HasMaxLength(50);
+    // });
 
-    modelBuilder.Entity<Carousels>(entity =>
-    {
-      entity.HasKey(e => e.Id).IsClustered(false);
+    // modelBuilder.Entity<Carousels>(entity =>
+    // {
+    //   entity.HasKey(e => e.Id).IsClustered(false);
 
-      entity.HasIndex(e => new { e.SortNo, e.HeaderName }, "IX_Carousels_sort_name").IsClustered();
+    //   entity.HasIndex(e => new { e.SortNo, e.HeaderName }, "IX_Carousels_sort_name").IsClustered();
 
-      entity.Property(e => e.HeaderName).HasMaxLength(50);
-      entity.Property(e => e.ImageUrl).HasMaxLength(250);
-      entity.Property(e => e.MoreUrl).HasMaxLength(250);
-      entity.Property(e => e.Remark).HasMaxLength(250);
-      entity.Property(e => e.SortNo).HasMaxLength(50);
-    });
+    //   entity.Property(e => e.HeaderName).HasMaxLength(50);
+    //   entity.Property(e => e.ImageUrl).HasMaxLength(250);
+    //   entity.Property(e => e.MoreUrl).HasMaxLength(250);
+    //   entity.Property(e => e.Remark).HasMaxLength(250);
+    //   entity.Property(e => e.SortNo).HasMaxLength(50);
+    // });
 
     modelBuilder.Entity<Carts>(entity =>
     {

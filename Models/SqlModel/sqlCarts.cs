@@ -55,13 +55,32 @@ LEFT OUTER JOIN Users ON Carts.MemberNo = Users.UserNo
       return model;
     }
 
+
+    /// <summary>
+    /// 取得遊客目前購物車明細
+    /// </summary>
+    /// <returns></returns>
+    public List<Carts> GetGuestDataList()
+    {
+      string str_query = GetSQLSelect();
+      str_query += " WHERE Carts.LotNo = @LotNo AND MemberNo = ''";
+      DynamicParameters parm = new DynamicParameters();
+      parm.Add("LotNo", CartService.LotNo);
+      var model = dpr.ReadAll<Carts>(str_query, parm);
+      return model;
+    }
+
     /// <summary>
     /// 遊客購物車合併至會員購物車
     /// </summary>
     public void MergeCart()
     {
       //取得遊客購物車明細
-      var data = GetDataList();
+      var data = GetGuestDataList();
+
+
+      // //保留目前遊客的批號
+      // string str_lot_no = CartService.LotNo;
 
       //更新購物車批號
       CartService.NewLotNo();
