@@ -10,5 +10,7 @@ namespace escale.Controllers
             return View();
         }
 
+        
+
     }
 }

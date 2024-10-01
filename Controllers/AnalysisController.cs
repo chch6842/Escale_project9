@@ -16,21 +16,36 @@ namespace escale.Controllers
     [HttpPost]
     public ActionResult Index(ScaleData model)
     {
+      // if (!ModelState.IsValid) return View(model);
+
+
+      // 取得使用者資料
+      // model.UserNo = SessionService.UserNo;
+      // var user = new z_sqlUsers();
+      // var userData = user.GetData(model.UserNo);
+
       if (!ModelState.IsValid) return View(model);
 
+      // 取得使用者資料
+      var userNo = SessionService.UserNo;
+      if (string.IsNullOrEmpty(userNo))
+      {
+        ModelState.AddModelError("", "使用者編號不存在");
+        return RedirectToAction("Login", "User", new { area = "" });
+      }
 
-      //取得使用者資料
-      model.UserNo = SessionService.UserNo;
       var user = new z_sqlUsers();
-      var userData = user.GetData(model.UserNo);
+      var userData = user.GetData(userNo);
 
-      //检查是否有会员资料
+      // 判斷 userData 是否為 null
       if (userData == null)
       {
-        // 没有会员资料处理，显示错误消息
-        ModelState.AddModelError("", "未找到会员资料。");
-        return View(model);
+        ModelState.AddModelError("", "找不到使用者資料");
+        return RedirectToAction("Login", "User", new { area = "" });
       }
+
+
+
 
       //儲存至資料庫
       var scale = new z_sqlScaleData();
