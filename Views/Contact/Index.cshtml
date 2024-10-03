@@ -1,13 +1,4 @@
-@* @{
-    using var companys = new z_sqlCompanys();
-    var company = companys.GetDefaultCompany();
-}
 
-<main id="container">
-
-<!-- 關於我們 -->
-
-@Html.Raw(company.AboutusText) *@
 
 @model vmContact
 
@@ -15,13 +6,13 @@
     ViewData["Title"] = "連絡我們";
     Layout = "_Layout";
 }
-@*<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
-     <style>
+     @* <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -41,117 +32,52 @@
         p {
             margin-bottom: 10px;
         }
-    </style>
+    </style> *@
 </head>
 <body>
-*@
-<div class="card-container">
 
-  <div class="card">
-    <h3 class="card-title">公司介紹</h3>
-    <p class="card-text">歡迎來到我們的公司，我們專注於開發物聯網連網電子料理秤，致力於為用戶提供精確的食物測量和營養管理解決方案。</p>
+<div class="content-container">
+
+  <div class="content-block">
+    <h3 class="section-title">公司介紹</h3>
+    <p class="section-text">歡迎來到我們的公司，我們專注於開發物聯網連網電子料理秤，致力於為用戶提供精確的食物測量和營養管理解決方案。</p>
   </div>
 
 </div>
 
-<div class="card-container">
-  <div class="card">
+<div class="content-container">
+  <div class="content-block">
 
-        <h3>產品介紹</h3>
-        <p class="card-text"><strong>物聯網連網電子料理秤</strong></p>
+      <h3 class="section-title">產品介紹</h3>
+      <p class="section-text"><strong>物聯網連網電子料理秤</strong></p>
 
+      <ul class="feature-list">
         <li><strong>精確測量：</strong>我們的電子料理秤使用先進的感應器技術，能夠精確地測量食物的重量和營養成分。</li>
         <li><strong>無縫連接：</strong>通過 Wi-Fi 或藍牙，電子料理秤可以方便地連接到互聯網，確保測量數據的即時傳輸。</li>
+      </ul>
   </div>
 </div>
 
-<div class="card-container">
+<div class="content-container">
 
-  <div class="card ">
+  <div class="content-block ">
 
-        <h3>功能介紹</h3>
+      <h3 class="section-title">功能介紹</h3>
 
-<div class=" ">
-    <h5>飲食數據分析</h5>
-    <p><strong>個人化管理：</strong>用戶界面友好，提供查看和分析個人飲食習慣的功能。</p>
-    <p><strong>機器學習和人工智慧技術：</strong>我們運用先進的技術對用戶的飲食數據進行深度分析，包括營養成分和攝入量等方面。</p>
+    <div class="feature-section">
+      <h5>飲食數據分析</h5>
+      <p><strong>個人化管理：</strong>用戶界面友好，提供查看和分析個人飲食習慣的功能。</p>
+      <p><strong>機器學習和人工智慧技術：</strong>我們運用先進的技術對用戶的飲食數據進行深度分析，包括營養成分和攝入量等方面。</p>
 
-    <h5>個性化飲食建議</h5>
-    <p><strong>定制建議：</strong>根據分析結果，為用戶生成個性化的飲食建議，並提供方便的商城連接，讓用戶能夠輕鬆購買所需食品。</p>
+      <h5>個性化飲食建議</h5>
+      <p><strong>定制建議：</strong>根據分析結果，為用戶生成個性化的飲食建議，並提供方便的商城連接，讓用戶能夠輕鬆購買所需食品。</p>
 
-    <h5>即時通訊支持</h5>
-    <p><strong>數據分享：</strong>用戶可以通過 Line 或其他即時通訊平台將數據發送給參與者，實現數據的便捷分享。</p>
-    <p><strong>社群互動：</strong>通過即時通訊平台，實現用戶之間的相互督促和支持，提升健康管理的互動性和趣味性。</p>
-</div>
-
-</div>
-
-
-
-
-</div>
-
-</div>
-
-
-
-
-  @* <div class="row">
-    <div class="col-md-6">
-      <img src="@Html.DisplayFor(model => model.Remark)" alt="Remark Image" class="img-fluid" />
+      <h5>即時通訊支持</h5>
+      <p><strong>數據分享：</strong>用戶可以通過 Line 或其他即時通訊平台將數據發送給參與者，實現數據的便捷分享。</p>
+      <p><strong>社群互動：</strong>通過即時通訊平台，實現用戶之間的相互督促和支持，提升健康管理的互動性和趣味性。</p>
     </div>
-    <div class="col-md-6">
-      <dl class="row">
-
-        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ProdNo)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(model => model.ProdNo)</dd>
-
-        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ProdName)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(model => model.ProdName)</dd>
-
-        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.BrandName)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(model => model.BrandName)</dd>
-
-        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.BrandSeriesName)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(model => model.BrandSeriesName)</dd>
-
-
-        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ContentText)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(model => model.ContentText)</dd>
-
-        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.SpecificationText)</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(model => model.SpecificationText)</dd>
-
-      </dl>
-
-  </div>要修改 *@
-
-
-@*公司介紹
-歡迎來到我們的公司，我們專注於開發物聯網連網電子料理秤，致力於為用戶提供精確的食物測量和營養管理解決方案。
-
-產品介紹
-物聯網連網電子料理秤
-
-精確測量：我們的電子料理秤使用先進的感應器技術，能夠精確地測量食物的重量和營養成分。
-無縫連接：通過 Wi-Fi 或藍牙，電子料理秤可以方便地連接到互聯網，確保測量數據的即時傳輸。
-功能介紹
-數據存儲與管理
-
-雲端數據庫：我們的系統接收來自電子料理秤的數據，並將其安全地存儲在雲端數據庫中，讓用戶隨時隨地都能訪問和管理自己的飲食數據。
-飲食數據分析
-
-個人化管理：用戶界面友好，提供查看和分析個人飲食習慣的功能。
-機器學習和人工智慧技術：我們運用先進的技術對用戶的飲食數據進行深度分析，包括營養成分和攝入量等方面。
-個性化飲食建議
-
-定制建議：根據分析結果，為用戶生成個性化的飲食建議，並提供方便的商城連接，讓用戶能夠輕鬆購買所需食品。
-即時通訊支持
-
-數據分享：用戶可以通過 Line 或其他即時通訊平台將數據發送給參與者，實現數據的便捷分享。
-社群互動：通過即時通訊平台，實現用戶之間的相互督促和支持，提升健康管理的互動性和趣味性。
-我們致力於利用物聯網技術和人工智慧，為用戶提供全方位的飲食管理解決方案，幫助每一位用戶更健康、更智慧地生活。
-</div>*@
+  </div>
+</div>
 
 
 <!-- 內容 -->
@@ -202,6 +128,7 @@
 
 }
 
-
+</body>
+</html>
 
 
